@@ -1,0 +1,25 @@
+{
+    "name": "in10/styleguide",
+    "description": "Laravel package for including IN10 styleguide",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Boom",
+            "email": "info@marcoboom.nl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+	   "psr-4": {
+		   "IN10\\Styleguide\\": "src"
+		}
+   	},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IN10\\Styleguide\\StyleguideServiceProvider"
+            ]
+        }
+    }
+}
