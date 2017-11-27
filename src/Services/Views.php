@@ -20,7 +20,7 @@ class Views
 
             $dirFinder = new Finder();
 
-            foreach ($dirFinder->files()->in($directory->getPathName())->name('*.blade.php')->notPath('#(^|/)_.+(/|$)#') as $file) {
+            foreach ($dirFinder->files()->in($directory->getPathName())->name('*.blade.php')->notPath('#(^|/)_.+(/|$)#')->sortByName() as $file) {
                 $name = str_replace('.blade.php', '', $file->getFileName());
                 $styledName = implode(' ', array_map(function ($part) {
                     return ucfirst($part);
