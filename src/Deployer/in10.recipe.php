@@ -106,3 +106,9 @@ task('upload', function () {
 
 // Auto-unlock when the deployment fails
 after('deploy:failed', 'deploy:unlock');
+
+// Clear opcache after deploying (only on test)
+task('clear-opcache', function () {
+    run('echo "" | sudo -S service php7.1-fpm reload');
+})->onHosts(['test']);
+after('success', 'clear-opcache');
