@@ -99,7 +99,7 @@ task('release', [
 
 // Upload files to server
 task('upload', function () {
-    upload('build', '{{release_path}}');
+    upload('build/', '{{release_path}}');
 });
 
 // Auto-unlock when the deployment fails
