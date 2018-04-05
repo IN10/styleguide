@@ -32,38 +32,36 @@ task('build', [
 
 task('build:create-folder', function () {
     // Ensure the build directory exists, and is empty
-    within(__DIR__, function () {
-        run('rm -rf ./build');
-        run('mkdir ./build');
-    });
+    run('rm -rf ./build');
+    run('mkdir ./build');
 })->local();
 
 task('build:clone', function () {
-    within(__DIR__.'/build', function () {
-        run('git clone ../ ./');
+    within('build', function () {
+        run('git clone .. .');
     });
 })->local();
 
 task('build:prepare-env', function () {
-    within(__DIR__.'/build', function () {
+    within('build', function () {
         run('cp ../.env ./.env');
     });
 })->local();
 
 task('build:backend', function () {
-    within(__DIR__.'/build', function () {
+    within('build', function () {
         run('composer install --no-interaction --prefer-dist --optimize-autoloader');
     });
 })->local();
 
 task('build:frontend', function () {
-    within(__DIR__.'/build', function () {
+    within('build', function () {
         run('yarn build');
     });
 })->local();
 
 task('build:clean', function () {
-    within(__DIR__.'/build', function () {
+    within('build', function () {
         run('rm -rf node_modules');
         run('rm -rf .git');
         run('rm -rf .env');
@@ -73,7 +71,7 @@ task('build:clean', function () {
 })->local();
 
 task('build:version', function () {
-    within(__DIR__.'/build', function () {
+    within('build', function () {
         $sha = run('git rev-parse HEAD');
         $username = run('whoami');
         $date = run('date +"%Y-%m-%d @ %H:%M:%S"');
@@ -101,7 +99,7 @@ task('release', [
 
 // Upload files to server
 task('upload', function () {
-    upload(__DIR__ . '/build/', '{{release_path}}');
+    upload('build', '{{release_path}}');
 });
 
 // Auto-unlock when the deployment fails
