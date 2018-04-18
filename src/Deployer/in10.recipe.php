@@ -95,6 +95,8 @@ task('release', [
     'artisan:migrate',
     'deploy:symlink',
     'deploy:unlock',
+    'cleanup',
+    'success',
 ]);
 
 // Upload files to server
