@@ -56,7 +56,7 @@ task('build:backend', function () {
 
 task('build:frontend', function () {
     within('build', function () {
-        run('yarn build');
+        run('yarn build', ['options' => 600]);
     });
 })->local();
 
