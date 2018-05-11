@@ -56,7 +56,7 @@ task('build:backend', function () {
 
 task('build:frontend', function () {
     within('build', function () {
-        run('yarn build', ['options' => 600]);
+        run('yarn build', ['timeout' => 600]);
     });
 })->local();
 
