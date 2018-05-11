@@ -16,8 +16,6 @@ desc('Deploy your project');
 task('deploy', [
     'build',
     'release',
-    'cleanup',
-    'success'
 ]);
 
 task('build', [
