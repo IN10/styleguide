@@ -92,6 +92,7 @@ task('release', [
     'artisan:optimize',
     'artisan:migrate',
     'deploy:symlink',
+    'clear-opcache',
     'deploy:unlock',
     'cleanup',
     'success',
@@ -109,4 +110,3 @@ after('deploy:failed', 'deploy:unlock');
 task('clear-opcache', function () {
     run('echo "" | sudo -S service php7.1-fpm reload');
 })->onHosts(['test']);
-after('success', 'clear-opcache');
