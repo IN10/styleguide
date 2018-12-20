@@ -34,6 +34,8 @@ class Views
             ];
         }
 
+        asort($sections);
+
         return $sections;
     }
 }
