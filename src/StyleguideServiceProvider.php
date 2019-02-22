@@ -19,10 +19,10 @@ class StyleguideServiceProvider extends ServiceProvider
         }
 
         //  Load the routes
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         // Load the views
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'styleguide');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'styleguide');
 
         // Publish the config
         $this->publishes([__DIR__ . '/../resources/config/styleguide.php' => config_path('styleguide.php')], 'styleguide');

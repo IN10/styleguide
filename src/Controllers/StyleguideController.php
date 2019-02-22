@@ -35,6 +35,6 @@ class StyleguideController
         // Set the styleguide interpretation flag
         Config::set('styleguide.in_styleguide', true);
 
-        return view(str_replace("resources/views", "", config('styleguide.view_path')).".$id");
+        return view(str_replace("resources/views", "", config('styleguide.view_path')) . ".$id");
     }
 }
