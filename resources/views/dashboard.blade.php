@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="nl" dir="ltr">
 <head>
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -86,7 +85,6 @@
             </svg>
         </div>
 
-
         <ul class="dashboard-viewport__list js-viewport-list">
             <li class="dashboard-viewport__item js-viewport-item" data-width="default">
                 100%
@@ -111,8 +109,6 @@
 
     <iframe class="component" src="{{ route('styleguide.show', '_layout') }}" name="preview"></iframe>
 </div>
-
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es6"></script>
 
 <script>
     const components = [...document.querySelectorAll('.js-component-link')];
